@@ -23,6 +23,10 @@ def main():
     def generar_frame_izq():
         frame_izquierdo= tk.Frame(ventana, bg='red')
         frame_izquierdo.grid(row=0, column=0, sticky='nsew')
+        etiqueta_izquierda= ttk.Label(frame_izquierdo, text='Generador de Contraseña', font='Calibri 20 bold')
+        etiqueta_izquierda.pack(pady=5)
+
+
 
     def generar_frame_cen():
 
@@ -37,8 +41,8 @@ def main():
         frame_centro= tk.Frame(ventana, bg='blue')
         frame_centro.grid(row=0, column=1, sticky='nsew')
 
-        etiqueta_central= ttk.Label(frame_centro, text='Generar Contraseña', font='consolas 20')
-        area_texto= tk.Text(frame_centro, pady=5)
+        etiqueta_central= ttk.Label(frame_centro, text='Nueva Contraseña', font='Calibri 20 bold')
+        area_texto= tk.Text(frame_centro, pady=5, height=1, width=40, font='Calibri 20 bold')
 
         scale_contenedor= tk.Frame(frame_centro, padx=5, pady=5)
         scale_etiqueta= ttk.Label(scale_contenedor, text='0')
@@ -49,8 +53,8 @@ def main():
         check_alfabeticos= ttk.Checkbutton(check_contenedor, text='Caracteres Alfabéticos', variable=control_alfabetico)
         check_especiales= ttk.Checkbutton(check_contenedor, text='Caracteres Especiales', variable=control_especiales)
 
-        etiqueta_central.pack( pady=5)
-        area_texto.pack( pady=5)
+        etiqueta_central.pack(pady=5)
+        area_texto.pack(pady=5)
 
         scale_contenedor.pack()
         scale_etiqueta.pack(side='left', padx=5)
@@ -69,7 +73,8 @@ def main():
     def generar_frame_der():
         frame_derecho= tk.Frame(ventana, bg='green')
         frame_derecho.grid(row=0, column=2, sticky='nsew')
-
+        etiqueta_derecha= ttk.Label(frame_derecho, text='Historial de Contraseñas', font='Calibri 20 bold')
+        etiqueta_derecha.pack(pady=5)
 
 
 
