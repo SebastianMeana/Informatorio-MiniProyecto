@@ -18,6 +18,12 @@ def main():
     control_especiales= tk.BooleanVar(value=False)
     control_longitud= tk.IntVar()
 
+    estilos= ttk.Style()
+    estilos.configure('Custom.TLabel', background='gray25', font='Calibri 12 bold')
+    estilos.configure('TScale', background='gray25', font='Calibri 12 bold')
+    estilos.configure('TCheckbutton', background='gray25', font='Calibri 12 bold')
+
+
 
 
     def generar_frame_izq():
@@ -38,27 +44,29 @@ def main():
                 scale_longitud.set(valor_redondeado)
         
 
-        frame_centro= tk.Frame(ventana, bg='blue')
+        frame_centro= tk.Frame(ventana, bg='gray25')
         frame_centro.grid(row=0, column=1, sticky='nsew')
 
-        etiqueta_central= ttk.Label(frame_centro, text='Nueva Contraseña', font='Calibri 20 bold')
-        area_texto= tk.Text(frame_centro, pady=5, height=1, width=40, font='Calibri 20 bold')
+        etiqueta_central= ttk.Label(frame_centro, text='Nueva Contraseña', font='Calibri 20 bold', style='Custom.TLabel')
+        area_texto= tk.Text(frame_centro, height=1, width=40, font='Calibri 20 bold', state='disabled')
 
-        scale_contenedor= tk.Frame(frame_centro, padx=5, pady=5)
-        scale_etiqueta= ttk.Label(scale_contenedor, text='0')
-        scale_longitud= ttk.Scale(scale_contenedor, variable=control_longitud, from_=4, to=30,command=actualizar_label_longitud)
+        scale_contenedor= tk.Frame(frame_centro, padx=5, pady=40, bg='Gray25')
+        scale_etiqueta_2= ttk.Label(scale_contenedor, text='Longitud de Contraseña',style='Custom.TLabel')
+        scale_etiqueta= ttk.Label(scale_contenedor, text='0',style='Custom.TLabel')
+        scale_longitud= ttk.Scale(scale_contenedor, variable=control_longitud, from_=4, to=30,command=actualizar_label_longitud, style='TScale')
 
-        check_contenedor= tk.Frame(frame_centro, padx=5, pady=5)
-        check_numerico= ttk.Checkbutton(check_contenedor, text='Caracteres Numéricos', variable=control_numerico)
-        check_alfabeticos= ttk.Checkbutton(check_contenedor, text='Caracteres Alfabéticos', variable=control_alfabetico)
-        check_especiales= ttk.Checkbutton(check_contenedor, text='Caracteres Especiales', variable=control_especiales)
+        check_contenedor= tk.Frame(frame_centro, padx=5, pady=5, bg= 'Gray25')
+        check_numerico= ttk.Checkbutton(check_contenedor, text='Caracteres Numéricos', variable=control_numerico, style= 'TCheckbutton')
+        check_alfabeticos= ttk.Checkbutton(check_contenedor, text='Caracteres Alfabéticos', variable=control_alfabetico, style= 'TCheckbutton')
+        check_especiales= ttk.Checkbutton(check_contenedor, text='Caracteres Especiales', variable=control_especiales, style= 'TCheckbutton')
 
         etiqueta_central.pack(pady=5)
-        area_texto.pack(pady=5)
+        area_texto.pack( pady=(150, 20))
 
         scale_contenedor.pack()
+        scale_etiqueta_2.pack(pady=5)
         scale_etiqueta.pack(side='left', padx=5)
-        scale_longitud.pack( pady=5, padx=5)
+        scale_longitud.pack(padx=5)
 
 
         check_contenedor.pack()
