@@ -69,6 +69,7 @@ def main():
             if control_alfabetico_mayus.get() == False and control_alfabetico_minus.get() == False and control_numerico.get() == False and control_especiales.get() == False:
                 area_texto.delete('1.0', tk.END)
                 area_texto.insert(tk.END , 'Debes seleccionar al menos un Tipo de Caracter')
+                area_texto.configure(state='disabled')
                 return
             
             # Asegurarse de seleccionar al menos un carácter de cada tipo habilitado
@@ -103,6 +104,7 @@ def main():
 
         etiqueta_central= ttk.Label(frame_centro, text='Generar Contraseña', font='Calibri 20 bold', style='Custom.TLabel')
         area_texto= tk.Text(frame_centro, height=1, width=40, font='Calibri 20 bold')
+        area_texto.configure(state='disabled')
 
         scale_contenedor= tk.Frame(frame_centro, padx=5, pady=40, bg='DodgerBlue')
         scale_etiqueta_2= ttk.Label(scale_contenedor, text='Longitud de Contraseña',style='Custom.TLabel')
