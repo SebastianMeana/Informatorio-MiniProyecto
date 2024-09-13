@@ -1,11 +1,16 @@
 # Generador de Contraseñas
 
 Este generador de Contraseñas es el MiniProyecto de TKinter presentado por el Grupo 2.
+<br>
+<br>
 
 ## Estructura del Proyecto
 
 El Proyecto cuenta con un único archivo llamado `main.py` el cual al ejecutarse, presentará el proyecto.
 Por defecto el Proyecto se abre en modo `Ventana Completa`, pero puede minimizarse hasta un mínimo de `700x500`.
+
+<br>
+<br>
 
 ## Como usar el Generador de Contraseña
 
